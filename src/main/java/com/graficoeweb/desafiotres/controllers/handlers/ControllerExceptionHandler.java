@@ -2,7 +2,6 @@ package com.graficoeweb.desafiotres.controllers.handlers;
 
 import com.graficoeweb.desafiotres.dto.CustomError;
 import com.graficoeweb.desafiotres.dto.ValidationError;
-import com.graficoeweb.desafiotres.services.exceptions.DatabaseException;
 import com.graficoeweb.desafiotres.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
