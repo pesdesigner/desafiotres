@@ -1,6 +1,7 @@
 package com.graficoeweb.desafiotres.dto;
 
 import com.graficoeweb.desafiotres.entities.Client;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;

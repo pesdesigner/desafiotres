@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
@@ -52,6 +53,14 @@ public class ClientService {
         catch(EntityNotFoundException e){
             throw new ResourceNotFoundException("Recurso não encontrado!");
         }
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        if(!repository.existsById(id)){
+            throw new ResourceNotFoundException("Recurso não encontrado!");
+        }
+        repository.deleteById(id);
     }
 
     private void copyDtoToEntity(ClientDTO dto, Client entity){
